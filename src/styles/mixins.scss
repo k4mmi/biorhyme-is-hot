@@ -98,6 +98,10 @@
     font-variant: normal;
     transition: 100ms;
 
+    @media (width >=$responsiveExtraLarge) {
+        font-size: 200px;
+    }
+    
     @media (width <=$responsiveMedium) {
         font-size: 8dvw;
     }

@@ -37,6 +37,11 @@
         line-height: 160px;
         transition: $animationSpeedExtraSlow translate;
 
+        @media (width >=$responsiveExtraLarge) {
+            font-size: 110px;
+        }
+
+
         &-1 {
             font-weight: 300;
         }
