@@ -1,0 +1,10 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.boxesSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    // justify-content: stretch;
+    gap: $spaceSmall;
+}

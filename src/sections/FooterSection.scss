@@ -1,0 +1,114 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.footerSection {
+    min-height: 420px;
+    background: $colorBackground-alt;
+    padding-top: $spaceExtraLarge;
+
+    &__section {
+        // background: rgba(122, 51, 51, 0.199);
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: $spaceExtraLarge;
+
+        @media (width <=$responsiveMedium) {
+            flex-direction: column-reverse;
+        }
+
+    }
+
+    &__wrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: $spaceLarge;
+
+        @media (width <=$responsiveMedium) {
+            width: 100%;
+            gap: $spaceMedium;
+
+        }
+    }
+
+    &__header {
+        font-family: font;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        color: $colorForeground-alt;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 4vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 6vw;
+        }
+    }
+
+    &__paragraph {
+        font-family: font;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 150%;
+        color: $colorForeground-alt2;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 3vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 4vw;
+        }
+    }
+
+    &__author {
+        font-family: font;
+        font-size: 19px;
+        font-style: normal;
+        color: $colorForeground-alt2;
+        font-size: 48px;
+        font-weight: 300;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 6vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 10vw;
+        }
+    }
+
+    &__idk {
+        font-family: font;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        color: $colorForeground-alt2;
+        margin-bottom: $spaceExtraLarge;
+    }
+
+    &__idk a {
+        @include linkAnimation;
+        font-family: font;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        color: $colorForeground-alt;
+        text-decoration: underline;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 3vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 4vw;
+        }
+    }
+}

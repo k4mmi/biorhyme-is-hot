@@ -1,0 +1,134 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.aboutSection {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: $spaceExtraLarge;
+    padding-bottom: calc($spaceExtraLarge * 2);
+    z-index: 2;
+    
+    @media (width <=$responsiveSmall) {
+        gap: $spaceLarge;
+    }
+    
+    &__inputWrapper {
+        padding-top: $spaceMedium;
+    }
+
+    &__input {
+        width: 100%;
+        height: 25px;
+        outline: none;
+        appearance: none;
+        height: $borderSize;
+        background: $colorForeground;
+    }
+
+    &__input::-moz-range-thumb {
+        height: 16px;
+        width: 72px;
+        background: $colorForeground;
+        border-radius: 0;
+        position: relative;
+        border: none;
+        cursor: pointer;
+
+        @media (width <=$responsiveMedium) {
+            width: 32px;
+        }
+    }
+
+    &__input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 72px;
+        background: $colorForeground;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+
+        @media (width <=$responsiveMedium) {
+            width: 32px;
+        }
+    }
+
+    &__inputWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $spaceMedium;
+    }
+
+    &__fullInput {
+        display: flex;
+        width: 100%;
+        gap: $spaceMedium;
+        align-items: center;
+    }
+
+    &__start {
+        color: $colorForeground;
+        font-family: font, monospace;
+        font-weight: 500;
+        font-stretch: 100%;
+        letter-spacing: -2%;
+        font-size: 32px;
+        font-variant: normal;
+        width: 80px;
+        text-align: left;
+        user-select: none;
+
+        @media (width <=$responsiveSmall) {
+            font-size: 24px;
+            width: 70px;
+        }
+    }
+
+    &__end {
+        color: $colorForeground;
+        font-family: font, monospace;
+        font-weight: 500;
+        font-stretch: 100%;
+        letter-spacing: -2%;
+        font-size: 32px;
+        font-variant: normal;
+        width: 80px;
+        text-align: right;
+        user-select: none;
+
+        @media (width <=$responsiveSmall) {
+            font-size: 24px;
+            width: 70px;
+        }
+    }
+
+    &__word {
+        color: $colorForeground;
+        font-family: font, monospace;
+        font-weight: 500;
+        font-stretch: 100%;
+        letter-spacing: -2%;
+        font-size: 5dvw;
+        font-variant: normal;
+        transition: 100ms;
+
+        @media (width >=$responsiveExtraLarge) {
+            font-size: 80px;
+        }
+
+        @media (width <=$responsiveLarge) {
+            font-size: 6dvw;
+        }
+
+        @media (width <=$responsiveMedium) {
+            font-size: 8dvw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 10dvw;
+        }
+    }
+}
+
+// style="appearance: none; width: 100%; height: 1px; background: rgb(0, 0, 0); outline: none; transition: opacity 200ms; --thumb-color: #000000;"

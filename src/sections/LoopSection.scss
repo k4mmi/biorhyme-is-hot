@@ -1,0 +1,51 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.loopSection {
+    height: fit-content;
+    user-select: none;
+    padding: $spaceExtraLarge 0 $spaceExtraLarge 0;
+    overflow: hidden;
+    position: relative;
+
+    @media (width <=$responsiveSmall) {
+        margin: calc($spaceExtraLarge * 2) 0;
+    }
+
+    &__container {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+    }
+
+    &__abc {
+        font-size: 140px;
+        font-family: font;
+        font-style: normal;
+        letter-spacing: 10%;
+        font-weight: 600;
+        font-stretch: 115%;
+        color: $colorForeground;
+        animation: loopSectionLoop 35000ms infinite forwards linear;
+
+        @keyframes loopSectionLoop {
+            from {
+                translate: -100% 0;
+            }
+
+            from {
+                translate: -200% 0;
+            }
+        }
+    }
+
+    &__img {
+        mix-blend-mode: multiply;
+        filter: contrast(0.85);
+        width: 400px;
+        position: absolute;
+        user-select: none;
+        pointer-events: none;
+    }
+
+}

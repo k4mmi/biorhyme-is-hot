@@ -1,0 +1,25 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 0 $spaceExtraLarge;
+
+    @media (width <=$responsiveMedium) {
+        padding: 0 $spaceLarge;
+    }
+
+    @media (width <=$responsiveSmall) {
+        padding: 0 $spaceMedium;
+    }
+
+    &__wrapper {
+        // border: 1px #000 dashed; // debug
+        width: 100%;
+        max-width: $maxwidth;
+    }
+}

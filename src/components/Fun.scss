@@ -1,0 +1,90 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.fun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__animation {
+        margin-top: -20vh;
+        width: 600px;
+        height: 600px;
+        position: relative;
+
+        @media (width <=$responsiveMedium) {
+            zoom: .4;
+        }
+
+        @media (width <=$responsiveSmall) {
+            zoom: .4;
+        }
+    }
+
+    &__top {
+        height: 450px;
+        width: 600px;
+        position: relative;
+        animation: funRotate 1500ms infinite alternate ease-in-out;
+        transform-origin: center 525px;
+
+        @keyframes funRotate {
+            from {
+                rotate: -30deg
+            }
+
+            to {
+                rotate: 30deg
+            }
+        }
+    }
+
+    &__symbol1 {
+        color: $colorForeground;
+        font-size: 200px;
+        font-family: font;
+        font-style: normal;
+        letter-spacing: 10%;
+        font-weight: 900;
+        font-stretch: 115%;
+        position: absolute;
+        bottom: -70px;
+        left: -5px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    &__symbol2 {
+        color: $colorForeground;
+        font-size: 200px;
+        font-family: font;
+        font-style: normal;
+        letter-spacing: 10%;
+        font-weight: 900;
+        font-stretch: 115%;
+        position: absolute;
+        bottom: -70px;
+        right: -20px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    &__stick {
+        background-color: $colorForeground;
+        width: 600px;
+        height: 16px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__ball {
+        background-color: $colorForeground;
+        width: 150px;
+        height: 150px;
+        left: 225px;
+        position: absolute;
+        border-radius: 100%;
+        bottom: 0;
+    }
+}

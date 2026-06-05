@@ -1,0 +1,198 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.showcaseSection {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    gap: $spaceExtraLarge;
+    padding: 0 $spaceExtraLarge;
+
+    @media (width <=$responsiveMedium) {
+        padding: 0 $spaceLarge;
+    }
+
+    @media (width <=$responsiveSmall) {
+        padding: 0 0;
+    }
+
+    padding-bottom: calc($spaceExtraLarge);
+    padding-top: calc($spaceExtraLarge);
+
+    @media (width <=$responsiveMedium) {
+        padding-bottom: 0;
+        padding-top: $spaceSmall;
+    }
+
+    @media (width <=$responsiveSmall) {
+        flex-direction: column-reverse;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @media (width <=$responsiveSmall) {
+            padding: 0 $spaceMedium;
+        }
+
+        // width: 100%;
+
+        &-symbolBoxes {
+            gap: $spaceExtraLarge;
+        }
+
+        &-symbol {
+            gap: $spaceLarge;
+            position: sticky;
+            top: calc($spaceExtraLarge * 2);
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (width <=$responsiveSmall) {
+                background: $colorBackground-alt;
+                gap: $spaceSmall;
+                top: 0;
+                outline: $colorBackground solid $spaceExtraSmall;
+                left: -100px;
+                border-bottom: solid $colorForeground $borderSize;
+                padding-bottom: $spaceLarge;
+                padding-top: $spaceMedium;
+            }
+        }
+    }
+
+    &__theSymbol {
+        text-align: center;
+        font-family: font;
+        font-size: 300px;
+        font-style: normal;
+        color: $colorForeground;
+        font-weight: 500;
+        font-stretch: 100%;
+        margin-bottom: $spaceMedium;
+        margin-top: $spaceSmall;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 200px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 120px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            color: $colorForeground-alt;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 25px;
+        outline: none;
+        appearance: none;
+        height: $borderSize;
+        background: $colorForeground;
+
+        @media (width <=$responsiveSmall) {
+            background: $colorForeground-alt2;
+        }
+    }
+
+    &__input::-moz-range-thumb {
+        height: 16px;
+        width: 72px;
+        background: $colorForeground;
+        border-radius: 0;
+        position: relative;
+        border: none;
+        cursor: pointer;
+
+        @media (width <=$responsiveMedium) {
+            width: 32px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            background: $colorForeground-alt2;
+        }
+    }
+
+    &__input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 72px;
+        background: $colorForeground;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+
+        @media (width <=$responsiveMedium) {
+            width: 32px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            background: $colorForeground-alt2;
+        }
+    }
+
+    &__inputWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $spaceMedium;
+    }
+
+    &__fullInput {
+        display: flex;
+        width: 100%;
+        gap: $spaceMedium;
+        align-items: center;
+        max-width: 460px;
+    }
+
+    &__start {
+        color: $colorForeground;
+        font-family: font, monospace;
+        font-weight: 500;
+        font-stretch: 100%;
+        letter-spacing: -2%;
+        font-size: 32px;
+        font-variant: normal;
+        width: 80px;
+        text-align: left;
+        user-select: none;
+
+        @media (width <=$responsiveSmall) {
+            font-size: 24px;
+            width: 70px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            color: $colorForeground-alt2;
+        }
+    }
+
+    &__end {
+        color: $colorForeground;
+        font-family: font, monospace;
+        font-weight: 500;
+        font-stretch: 100%;
+        letter-spacing: -2%;
+        font-size: 32px;
+        font-variant: normal;
+        width: 80px;
+        text-align: right;
+        user-select: none;
+
+        @media (width <=$responsiveSmall) {
+            font-size: 24px;
+            width: 70px;
+        }
+
+        @media (width <=$responsiveSmall) {
+            color: $colorForeground-alt2;
+        }
+    }
+}

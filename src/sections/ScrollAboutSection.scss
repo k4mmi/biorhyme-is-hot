@@ -1,0 +1,57 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.scrollAboutSection {
+    // background: rgba(51, 255, 0, 0.062);
+    height: 350vh;
+
+    &__sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        color: $colorForeground-alt;
+        text-align: center;
+        font-style: normal;
+        margin-bottom: $spaceLarge;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        transition: $animationSpeedExtraSlow translate;
+    }
+
+    &__textSpan {
+        color: $colorForeground-alt;
+        text-align: center;
+        width: fit-content;
+        font-family: font;
+        font-style: normal;
+        font-size: 8.7vw;
+        margin-bottom: $spaceLarge;
+        line-height: 160px;
+        transition: $animationSpeedExtraSlow translate;
+
+        &-1 {
+            font-weight: 300;
+        }
+
+        &-2 {
+            font-weight: 350;
+        }
+
+        &-3 {
+            font-weight: 400;
+        }
+    }
+
+    &__textContainer {
+        height: 200px;
+        overflow: hidden;
+    }
+}

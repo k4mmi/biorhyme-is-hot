@@ -1,0 +1,31 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.playgroundBox {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: font;
+    font-size: 160px;
+    user-select: none;
+
+    @media (width <=$responsiveSmall) {
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+    }
+
+    &-1 {
+        border: $colorForeground $borderSize solid;
+        background: $colorBackground;
+        color: $colorForeground;
+    }
+
+    &-2 {
+        border: $colorForeground-alt2 $borderSize solid;
+        background: $colorBackground-alt;
+        color: $colorForeground-alt;
+    }
+}

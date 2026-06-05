@@ -1,0 +1,98 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.boxContainer {
+    height: 80vh;
+    border: solid $colorForeground $borderSize;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    transition: $animationSpeedSlow ease-in-out;
+
+    @media (width <=$responsiveSmall) {
+        height: 60vh;
+    }
+
+    &-hide {
+        @media (width <=$responsiveSmall) {
+            display: none;
+        }
+    }
+
+    &__windowDecoration {
+        background: $colorBackground-alt;
+        width: 64px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-direction: column;
+        padding: $spaceMedium 0;
+        cursor: pointer;
+
+        &:hover .boxContainer__openText {
+            opacity: 1;
+        }
+    }
+
+    &__name {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        color: $colorForeground-alt;
+        rotate: -90deg;
+        text-align: left;
+        transform-origin: center right;
+        translate: -36px -12px;
+        display: flex;
+        width: fit-content;
+        // background-color: red;
+        height: fit-content;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__open {
+        width: 64px;
+        transition: $animationSpeedNormal ease-in-out;
+        rotate: -90deg;
+        margin-bottom: calc($spaceMedium + $spaceSmall);
+    }
+
+    &__openText {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 300;
+        width: 300px;
+        font-family: font;
+        color: $colorForeground-alt2;
+        display: flex;
+        opacity: 0;
+        transition: opacity $animationSpeedSlow;
+
+        @media (width <=$responsiveSmall) {
+            opacity: 1;
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        color: $colorForeground;
+        font-family: font;
+        width: 100%;
+        bottom: $spaceMedium;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        user-select: none;
+        z-index: 1000;
+        pointer-events: none;
+        padding: 0 $spaceMedium;
+    }
+}

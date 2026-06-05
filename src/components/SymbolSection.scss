@@ -1,0 +1,46 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.symbolSection {
+    display: flex;
+    gap: $spaceMedium;
+    flex-direction: column;
+
+    &__symbolBoxes {
+        display: grid;
+        grid-template-areas: "a a a a a a a a";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0;
+        width: fit-content;
+
+        @media (width <=$responsiveExtraLarge) {
+            grid-template-areas: "a a a a a";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        @media (width <=$responsiveLarge) {
+            grid-template-areas: "a a a";
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (width <=$responsiveMedium) {
+            grid-template-areas: "a a a";
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+        }
+
+        @media (width <=$responsiveSmall) {
+            grid-template-areas: "a a a";
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &__name {
+        font-family: font;
+        font-size: 36px;
+        font-style: normal;
+        font-stretch: 105%;
+        font-weight: 600;
+        color: $colorForeground;
+    }
+}

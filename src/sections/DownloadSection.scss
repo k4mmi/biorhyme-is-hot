@@ -1,0 +1,103 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.downloadSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $spaceMedium;
+    }
+
+    &__download {
+        color: $colorForeground;
+        text-align: center;
+        font-family: font;
+        font-size: 128px;
+        font-style: normal;
+        font-weight: 550;
+        transition: $animationSpeedFast font-stretch, $animationSpeedFast font-weight;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 12vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 13.5vw;
+        }
+
+
+        &:hover {
+            font-stretch: 109%;
+            font-weight: 900;
+        }
+    }
+
+    &__links {
+        font-size: 36px;
+        color: $colorForeground;
+        font-family: font;
+        font-style: normal;
+        font-weight: 500;
+        display: flex;
+        gap: $spaceSmall;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 4.5vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 5vw;
+        }
+
+        & a {
+            font-size: 36px;
+            font-family: font;
+            color: $colorForeground;
+            font-style: normal;
+            font-weight: 500;
+            transition: $animationSpeedFast;
+
+            @media (width <=$responsiveMedium) {
+                font-size: 4.5vw;
+            }
+
+            @media (width <=$responsiveSmall) {
+                font-size: 5vw;
+            }
+
+            &:hover {
+                @include linkAnimation
+            }
+        }
+    }
+
+    &__license {
+        font-family: font;
+        font-size: 20px;
+        color: $colorForeground;
+        font-style: normal;
+        font-weight: 400;
+        transition: $animationSpeedFast;
+
+        @media (width <=$responsiveMedium) {
+            font-size: 3vw;
+        }
+
+        @media (width <=$responsiveSmall) {
+            font-size: 4vw;
+        }
+
+        &:hover {
+            @include linkAnimation
+        }
+    }
+
+}
