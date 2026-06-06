@@ -7,6 +7,8 @@
     font-size: 105px;
     font-variant: normal;
     transition: 100ms;
+    cursor: default;
+    user-select: none;
 
     @media (width >=$responsiveExtraLarge) {
         font-size: 130px;

@@ -108,22 +108,21 @@
         display: flex;
         height: calc(100% - $spaceExtraLarge * 2 + $spaceMedium);
         transition: $animationSpeedSlow opacity;
-        width: calc(100% - $spaceExtraLarge * 2);
         max-width: $maxwidth;
-
-        @media (width <=$responsiveMedium) {
-            width: calc(100% - $spaceLarge * 2);
-        }
-
-        @media (width <=$responsiveSmall) {
-            width: calc(100% - $spaceMedium * 2);
-        }
-
     }
-
+    
     &__subFrame {
         width: 100%;
         position: relative;
+        margin: 0 $spaceExtraLarge;
+
+        @media (width <=$responsiveMedium) {
+            margin: 0 $spaceLarge;
+        }
+    
+        @media (width <=$responsiveSmall) {
+            margin: 0 $spaceMedium;
+        }
     }
 
     &__corner {

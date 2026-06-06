@@ -8,6 +8,8 @@
     align-items: center;
     height: fit-content;
     padding: 0 $spaceExtraLarge;
+    overflow: hidden;
+    position: relative;
 
     @media (width <=$responsiveMedium) {
         padding: 0 $spaceLarge;

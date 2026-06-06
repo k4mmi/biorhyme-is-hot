@@ -147,7 +147,7 @@ export function HomeSection() {
 
         function scrollHandle() {
 
-            if (window.scrollY <= 100) {
+            if (window.scrollY <= 20) {
                 setFrameOpacity(1);
             } else {
                 setFrameOpacity(0);
