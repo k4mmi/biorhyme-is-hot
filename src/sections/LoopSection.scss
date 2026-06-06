@@ -4,8 +4,8 @@
 .loopSection {
     height: fit-content;
     user-select: none;
-    padding: $spaceExtraLarge 0 $spaceExtraLarge 0;
-    overflow: hidden;
+    padding: calc($spaceExtraLarge * 2) 0 calc($spaceExtraLarge * 2) 0;
+    // overflow: hidden;
     position: relative;
 
     @media (width <=$responsiveSmall) {
@@ -46,6 +46,16 @@
         position: absolute;
         user-select: none;
         pointer-events: none;
+    }
+
+    &__imgContainer {
+        height: 2000px;
+        position: absolute;
+        width: 100%;
+        top: -500px;
+        pointer-events: none;
+        user-select: none;
+        overflow: hidden;
     }
 
 }

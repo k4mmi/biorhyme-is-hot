@@ -75,6 +75,13 @@
         font-stretch: 100%;
         margin-bottom: $spaceMedium;
         margin-top: $spaceSmall;
+        user-select: none;
+        cursor: pointer;
+        transition: scale $animationSpeedNormal;
+
+        &:hover {
+            scale: 1.1;
+        }
 
         @media (width <=$responsiveMedium) {
             font-size: 200px;

@@ -2,7 +2,7 @@
 @use '../styles/mixins' as *;
 
 .aboutSection {
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex;
     flex-direction: column;
     gap: $spaceExtraLarge;
@@ -128,6 +128,10 @@
         @media (width <=$responsiveSmall) {
             font-size: 10dvw;
         }
+    }
+
+    &__text {
+        padding-bottom: calc($spaceExtraLarge * 2);
     }
 }
 

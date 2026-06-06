@@ -9,6 +9,16 @@
     align-items: center;
     z-index: 2;
     overflow: hidden;
+    margin: 0;
+    padding: 0 $spaceExtraLarge;
+
+    @media (width <=$responsiveMedium) {
+        padding: 0 $spaceLarge;
+    }
+
+    @media (width <=$responsiveSmall) {
+        padding: 0 $spaceMedium $spaceExtraLarge $spaceMedium;
+    }
 
     &__heading {
         width: fit-content;
@@ -66,6 +76,7 @@
         transition: background $animationSpeedNormal;
         opacity: 0;
         animation: homeSectionArrow 1000ms forwards cubic-bezier(0.66, 0, 0.435, 1.7) 2000ms;
+        border-radius: 100%;
 
         @media (width <=$responsiveSmall) {
             bottom: calc($spaceExtraLarge * 2);
@@ -85,6 +96,60 @@
 
         &:hover {
             background: $colorBackground-alt2;
+        }
+    }
+
+    &__frame {
+        z-index: 3;
+        user-select: none;
+        pointer-events: none;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        height: calc(100% - $spaceExtraLarge * 2 + $spaceMedium);
+        transition: $animationSpeedSlow opacity;
+        width: calc(100% - $spaceExtraLarge);
+
+        @media (width <=$responsiveMedium) {
+            width: calc(100% - $spaceLarge);
+        }
+
+        @media (width <=$responsiveSmall) {
+            width: calc(100% - $spaceMedium);
+        }
+
+    }
+
+    &__subFrame {
+        width: 100%;
+        position: relative;
+    }
+
+    &__corner {
+        width: 82px;
+        position: absolute;
+
+        &-topLeft {
+            top: 0;
+            left: 0;
+            rotate: 90deg;
+        }
+
+        &-topRight {
+            top: 0;
+            right: 0;
+            rotate: 180deg;
+        }
+
+        &-bottomRight {
+            right: 0;
+            bottom: 0;
+            rotate: 270deg;
+        }
+
+        &-bottomLeft {
+            bottom: 0;
+            left: 0;
         }
     }
 }

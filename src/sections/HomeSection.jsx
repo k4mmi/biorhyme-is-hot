@@ -6,7 +6,10 @@ import { animate, createScope, splitText, stagger, utils } from "animejs";
 export function HomeSection() {
 
     const root = useRef(null);
+    const frame = useRef(null);
     const scope = useRef(null);
+
+    const [frameOpacity, setFrameOpacity] = useState(1);
 
     useEffect(() => {
 
@@ -141,21 +144,45 @@ export function HomeSection() {
 
         });
 
+
+        function scrollHandle() {
+
+            if (window.scrollY <= 100) {
+                setFrameOpacity(1);
+            } else {
+                setFrameOpacity(0);
+            }
+
+        }
+
+        document.addEventListener("scroll", scrollHandle)
+
         return () => scope.current.revert()
 
     }, []);
 
 
     return (
-        <Section className="homeSection" sidePadding={0}>
+        <Section className="homeSection" sidepadding={0}>
             <img className="homeSection__circle" src="./assets/circle2.svg" alt="Very cool circle effect" />
             <div className="homeSection__grid"></div>
             <h1 className="homeSection__heading" ref={root}>
                 BioRhyme
             </h1>
-            <a href="#about" className="homeSection__arrow">
+            <a href="#about" className="homeSection__arrow" title="Scroll down">
                 <img src="./assets/arrow.svg" alt="Very cool circle effect" />
             </a>
+
+            <div className="homeSection__frame" ref={frame} style={{opacity: frameOpacity}}>
+                <div className="homeSection__subFrame">
+                    <img src="./assets/corner.svg" className="homeSection__corner homeSection__corner-topLeft" />
+                    <img src="./assets/corner.svg" className="homeSection__corner homeSection__corner-topRight" />
+                    <img src="./assets/corner.svg" className="homeSection__corner homeSection__corner-bottomRight" />
+                    <img src="./assets/corner.svg" className="homeSection__corner homeSection__corner-bottomLeft" />
+                </div>
+            </div>
+
+
         </Section>
     );
 }

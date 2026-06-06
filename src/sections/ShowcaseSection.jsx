@@ -8,7 +8,9 @@ import "./ShowcaseSection.scss"
 export function ShowcaseSection() {
 
     const [symbol, setSymbol] = useState("a");
+    const [caps, setCaps] = useState("lowercase");
 
+    const theSymbol = useRef(null);
     const root = useRef(null);
     const scope = useRef(null);
 
@@ -23,8 +25,15 @@ export function ShowcaseSection() {
             Object.values($symbols).forEach((symbol) => {
 
                 function changeValue() {
-                    setSymbol(symbol.innerHTML)
-                    // console.log(symbol.innerHTML);
+                    setSymbol(symbol.innerHTML);
+
+                    // animate(theSymbol.current, {
+                    //     // opacity: ['.2', '1'],
+                    //     // scale: ['.6', '1'],
+                    //     filter: ["blur16px)", "blur(0px)"],
+                    //     duration: 1000,
+                    //     ease: 'out(3)',
+                    // });
                 }
 
                 symbol.addEventListener("mouseenter", changeValue);
@@ -33,15 +42,23 @@ export function ShowcaseSection() {
 
             const $showcaseSectionWidth = document.getElementById("showcaseSectionWidth");
             const $showcaseSectionWeight = document.getElementById("showcaseSectionWeight");
-            const $theSymbol = document.getElementById("theSymbol");
 
             function styleUpdate() {
-                $theSymbol.style.fontStretch = `${$showcaseSectionWidth.value}%`;
-                $theSymbol.style.fontWeight = $showcaseSectionWeight.value;
+                theSymbol.current.style.fontStretch = `${$showcaseSectionWidth.value}%`;
+                theSymbol.current.style.fontWeight = $showcaseSectionWeight.value;
+            }
+
+            function capsFunction() {
+                if (theSymbol.current.style.textTransform === "uppercase") {
+                    setCaps("lowercase")                    
+                } else if (theSymbol.current.style.textTransform === "lowercase") {
+                    setCaps("uppercase");
+                }
             }
 
             $showcaseSectionWidth.addEventListener('input', styleUpdate);
             $showcaseSectionWeight.addEventListener('input', styleUpdate);
+            theSymbol.current.addEventListener('click', capsFunction);
         });
 
         return () => scope.current.revert()
@@ -49,7 +66,7 @@ export function ShowcaseSection() {
     }, []);
 
     return (
-        <Section className="showcaseSection" ref={root} sidePadding={0}>
+        <Section className="showcaseSection" ref={root} sidepadding="0">
 
             <div className="showcaseSection__wrapper showcaseSection__wrapper-symbolBoxes">
 
@@ -149,7 +166,7 @@ export function ShowcaseSection() {
             </div>
 
             <div className="showcaseSection__wrapper showcaseSection__wrapper-symbol">
-                <span className="showcaseSection__theSymbol" id="theSymbol">{symbol}</span>
+                <span className="showcaseSection__theSymbol" ref={theSymbol} title="Click to uppercase/lowercase" style={{ textTransform: caps }}>{symbol}</span>
 
                 <div className="showcaseSection__fullInput">
                     <span className="showcaseSection__start">100</span>

@@ -12,6 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 
     &__text {
@@ -58,5 +59,35 @@
     &__textContainer {
         height: 200px;
         overflow: hidden;
+        z-index: 3;
+    }
+
+    &__circle {
+        position: absolute;
+        z-index: 0;
+        display: flex;
+        width: 150vh;
+        animation: scrollAboutSectionRotate 3500ms infinite forwards linear;
+
+        @keyframes scrollAboutSectionRotate {
+            from {
+                rotate: 0deg
+            }
+
+            to {
+                rotate: 360deg
+            }
+        }
+    }
+
+    &__grid {
+        position: absolute;
+        // background: linear-gradient(transparent 30px, $colorBackground 30px, $colorBackground 40px) 40px 40px / 40px 40px repeat;
+        // mask: linear-gradient(90deg, transparent 30px, $colorBackground 30px, $colorBackground 40px) 40px 40px / 40px 40px repeat;
+        background: linear-gradient(transparent 0px, $colorBackground-alt 16px) 16px 16px / 16px 16px repeat;
+        z-index: 1;
+        display: flex;
+        width: 150vh;
+        height: 150vh;
     }
 }

@@ -38,7 +38,7 @@ export function AboutSection() {
             const $words = document.getElementsByClassName("aboutSection__word");
 
             function styleUpdate() {
-                console.log($aboutSectionWidth.value);
+                // console.log($aboutSectionWidth.value);
                 
                 Object.values($words).forEach((word) => {
                     word.style.fontStretch = `${$aboutSectionWidth.value}%`;

@@ -20,7 +20,7 @@ export function LoopSection() {
             const y = event.clientY - rect.top;
             setDisplay("flex");
             setPositionX(`${x - 400 / 2}px`)
-            setPositionY(`${y - 266 / 2}px`)
+            setPositionY(`${y - 266 / 2 +500}px`)
         };
 
         function handleLeave() {
@@ -40,7 +40,9 @@ export function LoopSection() {
                 <_text />
                 <_text />
             </div>
-            <img className="loopSection__img" style={{ top: positionY, left: positionX, display: display}} src="./assets/pexels-philevenphotos-21314036.webp" alt="Boston" />
+            <div className="loopSection__imgContainer">
+                <img className="loopSection__img" style={{ top: positionY, left: positionX, display: display}} src="./assets/pexels-philevenphotos-21314036.webp" alt="Boston" />
+            </div>
         </div>
     );
 }

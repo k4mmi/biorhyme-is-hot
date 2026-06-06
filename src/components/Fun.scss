@@ -53,6 +53,11 @@
         left: -5px;
         user-select: none;
         cursor: pointer;
+        transition: scale $animationSpeedNormal;
+
+        &:hover {
+            scale: 1.1;
+        }
     }
 
     &__symbol2 {
@@ -68,6 +73,11 @@
         right: -20px;
         user-select: none;
         cursor: pointer;
+        transition: scale $animationSpeedNormal;
+
+        &:hover {
+            scale: 1.1;
+        }
     }
 
     &__stick {

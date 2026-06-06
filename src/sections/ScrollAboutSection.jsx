@@ -16,7 +16,7 @@ export function ScrollAboutSection() {
             const elementHeight = $scrollAboutSection.offsetHeight; // "$scrollAboutSection"' height
             const sectionElementHeight = $scrollAboutSectionSticky.offsetHeight; // "$scrollAboutSectionSticky"' height
             const timeline = elementHeight + sectionElementHeight / 2; // How long I can scroll
-            const timelineCut = timeline / 3 - sectionElementHeight / 2 ; // Five texts
+            const timelineCut = timeline / 3 - sectionElementHeight / 2; // Five texts
 
             if (elementPos >= 0 && elementPos < (timelineCut * 1)) {
                 setTranslateValue(0);
@@ -25,7 +25,6 @@ export function ScrollAboutSection() {
             } else if (elementPos >= (timelineCut * 2) && elementPos < (timelineCut * 3)) {
                 setTranslateValue(2);
             }
-
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -34,8 +33,10 @@ export function ScrollAboutSection() {
 
 
     return (
-        <Section className="scrollAboutSection" background="#222222" id="scrollAboutSection">
+        <Section className="scrollAboutSection" background="#222222" id="scrollAboutSection" sidepadding={0}>
             <div className="scrollAboutSection__sticky" id="scrollAboutSectionSticky">
+                <img className="scrollAboutSection__circle" src="./assets/circle2-alt.svg" alt="Very cool circle effect" />
+                <div className="scrollAboutSection__grid"></div>
                 <div className="scrollAboutSection__textContainer">
                     <span className="scrollAboutSection__text" style={{ translate: `0 -${translateValue * 200}px` }}>
                         <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-1">A variable font</span>

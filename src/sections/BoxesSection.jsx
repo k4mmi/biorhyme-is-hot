@@ -8,8 +8,8 @@ import { Inspect } from "../components/Inspect";
 
 export function BoxesSection() {
 
-    const closed = "66px"
-    const opened = "100%"
+    const closed = "66px";
+    const opened = "100%";
 
     const ref1 = useRef(null);
     const ref2 = useRef(null);
@@ -24,26 +24,26 @@ export function BoxesSection() {
         const $window = root.current;
 
         function openClose1() {
-            setWidth1(opened)
-            setWidth2(closed)
-            setWidth3(closed)
+            setWidth1(opened);
+            setWidth2(closed);
+            setWidth3(closed);
         }
 
         function openClose2() {
-            setWidth1(closed)
-            setWidth2(opened)
-            setWidth3(closed)
+            setWidth1(closed);
+            setWidth2(opened);
+            setWidth3(closed);
         }
 
         function openClose3() {
-            setWidth1(closed)
-            setWidth2(closed)
-            setWidth3(opened)
+            setWidth1(closed);
+            setWidth2(closed);
+            setWidth3(opened);
         }
 
-        ref1.current.addEventListener("click", openClose1)
-        ref2.current.addEventListener("click", openClose2)
-        ref3.current.addEventListener("click", openClose3)
+        ref1.current.addEventListener("click", openClose1);
+        ref2.current.addEventListener("click", openClose2);
+        ref3.current.addEventListener("click", openClose3);
 
     }, []);
 

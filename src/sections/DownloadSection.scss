@@ -7,6 +7,8 @@
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 
     &__info {
         display: flex;
@@ -14,6 +16,7 @@
         justify-content: center;
         align-items: center;
         gap: $spaceMedium;
+        z-index: 3;
     }
 
     &__download {
@@ -22,6 +25,7 @@
         font-family: font;
         font-size: 128px;
         font-style: normal;
+        z-index: 3;
         font-weight: 550;
         transition: $animationSpeedFast font-stretch, $animationSpeedFast font-weight;
 
@@ -32,7 +36,6 @@
         @media (width <=$responsiveSmall) {
             font-size: 13.5vw;
         }
-
 
         &:hover {
             font-stretch: 109%;
@@ -47,6 +50,7 @@
         font-style: normal;
         font-weight: 500;
         display: flex;
+        z-index: 3;
         gap: $spaceSmall;
 
         @media (width <=$responsiveMedium) {
@@ -86,6 +90,7 @@
         font-style: normal;
         font-weight: 400;
         transition: $animationSpeedFast;
+        z-index: 3;
 
         @media (width <=$responsiveMedium) {
             font-size: 3vw;
@@ -98,6 +103,35 @@
         &:hover {
             @include linkAnimation
         }
+
     }
 
+    &__circle {
+        position: absolute;
+        z-index: 0;
+        display: flex;
+        width: 100vh;
+        animation: downloadSectionRotate 10000ms infinite forwards linear;
+
+        @keyframes downloadSectionRotate {
+            from {
+                rotate: 0deg
+            }
+
+            to {
+                rotate: 360deg
+            }
+        }
+    }
+
+    &__grid {
+        position: absolute;
+        // background: linear-gradient(transparent 30px, $colorBackground 30px, $colorBackground 40px) 40px 40px / 40px 40px repeat;
+        // mask: linear-gradient(90deg, transparent 30px, $colorBackground 30px, $colorBackground 40px) 40px 40px / 40px 40px repeat;
+        background: linear-gradient(transparent 0px, $colorBackground 16px) 16px 16px / 16px 16px repeat;
+        z-index: 1;
+        display: flex;
+        width: 100vh;
+        height: 100vh;
+    }
 }
