@@ -4,20 +4,24 @@
     font-family: font, monospace;
     font-weight: 300;
     font-stretch: 110%;
-    font-size: 9dvw;
+    font-size: 105px;
     font-variant: normal;
     transition: 100ms;
 
     @media (width >=$responsiveExtraLarge) {
-        font-size: 160px;
+        font-size: 130px;
     }
-    
+
+    @media (width <=$responsiveLarge) {
+        font-size: 10dvw;
+    }
+
     @media (width <=$responsiveMedium) {
-        font-size: 8dvw;
+        font-size: 9dvw;
     }
-    
+
     @media (width <=$responsiveSmall) {
-        font-size: 12dvw;
+        font-size: 11dvw;
     }
 
 }

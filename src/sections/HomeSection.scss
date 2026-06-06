@@ -23,7 +23,7 @@
     &__heading {
         width: fit-content;
         padding-bottom: $spaceExtraLarge;
-        margin-bottom: $spaceExtraLarge;
+        margin-bottom: $spaceLarge;
         z-index: 1;
     }
 
@@ -108,14 +108,15 @@
         display: flex;
         height: calc(100% - $spaceExtraLarge * 2 + $spaceMedium);
         transition: $animationSpeedSlow opacity;
-        width: calc(100% - $spaceExtraLarge);
+        width: calc(100% - $spaceExtraLarge * 2);
+        max-width: $maxwidth;
 
         @media (width <=$responsiveMedium) {
-            width: calc(100% - $spaceLarge);
+            width: calc(100% - $spaceLarge * 2);
         }
 
         @media (width <=$responsiveSmall) {
-            width: calc(100% - $spaceMedium);
+            width: calc(100% - $spaceMedium * 2);
         }
 
     }
