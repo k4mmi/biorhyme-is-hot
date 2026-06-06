@@ -13,12 +13,16 @@
         height: 600px;
         position: relative;
 
+        @media (width <=$responsiveLarge) {
+            zoom: .7;
+        }
+
         @media (width <=$responsiveMedium) {
             zoom: .4;
         }
 
         @media (width <=$responsiveSmall) {
-            zoom: .4;
+            zoom: .3.5;
         }
     }
 
