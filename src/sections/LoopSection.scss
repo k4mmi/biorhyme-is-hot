@@ -46,6 +46,8 @@
         position: absolute;
         user-select: none;
         pointer-events: none;
+        transition: 20ms;
+        z-index: 10;
     }
 
     &__imgContainer {
@@ -57,5 +59,4 @@
         user-select: none;
         overflow: hidden;
     }
-
 }

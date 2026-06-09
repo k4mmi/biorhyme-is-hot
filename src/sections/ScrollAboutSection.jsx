@@ -35,7 +35,7 @@ export function ScrollAboutSection() {
     return (
         <Section className="scrollAboutSection" background="#222222" id="scrollAboutSection" sidepadding={0}>
             <div className="scrollAboutSection__sticky" id="scrollAboutSectionSticky">
-                <img className="scrollAboutSection__circle" src="./assets/circle2-alt.svg" alt="Very cool circle effect" />
+                <img className="scrollAboutSection__circle" src="./assets/circle2-alt.svg" alt="Very cool circle effect" loading="lazy" fetchPriority="high" />
                 <div className="scrollAboutSection__grid"></div>
                 <div className="scrollAboutSection__textContainer">
                     <span className="scrollAboutSection__text" style={{ translate: `0 -${translateValue * 200}px` }}>

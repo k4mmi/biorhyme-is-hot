@@ -4,7 +4,7 @@ import "./DownloadSection.scss"
 export function DownloadSection() {
     return (
         <Section className="downloadSection" sidepadding={0}>
-            <img className="downloadSection__circle" src="./assets/circle2-alt2.svg" alt="Very cool circle effect" />
+            <img className="downloadSection__circle" src="./assets/circle2-alt2.svg" alt="Very cool circle effect" loading="lazy" fetchPriority="high" />
             <div className="downloadSection__grid"></div>
             <a href="https://github.com/aoifemooney/makingbiorhyme/tree/b3c0488559ad7c42e11b71e65d255344faff63b9/fonts" target="_blank" className="downloadSection__download">Download</a>
             <div className="downloadSection__info">
