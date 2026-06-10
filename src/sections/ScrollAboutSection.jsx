@@ -41,7 +41,7 @@ export function ScrollAboutSection() {
                     <span className="scrollAboutSection__text" style={{ translate: `0 -${translateValue * 200}px` }}>
                         <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-1">A variable font</span>
                         <br />
-                        <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-2">on two axes</span>
+                        <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-2">on two axes,</span>
                         <br />
                         <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-3">width and weignt.</span>
                     </span>

@@ -7,6 +7,8 @@
     position: relative;
     gap: $spaceExtraLarge;
     padding: 0 $spaceExtraLarge;
+    padding-bottom: calc($spaceExtraLarge);
+    padding-top: calc($spaceExtraLarge);
 
     @media (width <=$responsiveMedium) {
         padding: 0 $spaceLarge;
@@ -15,9 +17,6 @@
     @media (width <=$responsiveSmall) {
         padding: 0 0;
     }
-
-    padding-bottom: calc($spaceExtraLarge);
-    padding-top: calc($spaceExtraLarge);
 
     @media (width <=$responsiveMedium) {
         padding-bottom: 0;
@@ -80,7 +79,7 @@
         transition: scale $animationSpeedNormal;
 
         &:hover {
-            scale: 1.1;
+            scale: 1.03;
         }
 
         @media (width <=$responsiveMedium) {

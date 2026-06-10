@@ -111,7 +111,7 @@
         letter-spacing: -2%;
         font-size: 5dvw;
         font-variant: normal;
-        transition: 100ms;
+        // transition: 100ms; // broken on chromium
 
         @media (width >=$responsiveExtraLarge) {
             font-size: 80px;
