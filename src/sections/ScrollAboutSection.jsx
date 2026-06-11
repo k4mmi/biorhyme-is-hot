@@ -43,7 +43,7 @@ export function ScrollAboutSection() {
                         <br />
                         <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-2">on two axes,</span>
                         <br />
-                        <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-3">width and weignt.</span>
+                        <span className="scrollAboutSection__textSpan scrollAboutSection__textSpan-3">width and weight.</span>
                     </span>
                 </div>
             </div>
